@@ -9,10 +9,10 @@
 		Wow! We have found lots of delicious recipes! 
 		Showing the top <%= @result['count'] %> results in page <%= @page %>.
 	</summary>
-	<button>
+	<button id = last>
 		<%= link_to "last page", recipes_index_path(search: @to_search, page: @page.to_i - 1) %>
 	</button>
-	<button>
+	<button id = next>
 		<%= link_to "next page", recipes_index_path(search: @to_search, page: @page.to_i + 1) %>
 	</button>
 	<table>

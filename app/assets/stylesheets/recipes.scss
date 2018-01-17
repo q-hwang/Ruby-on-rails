@@ -4,6 +4,27 @@
 body {
 	background-color: #8E79AD
 }
+
+#last, #next {
+	position: fixed;
+	top: 40%;
+	height:100px;
+	border-radius: 12px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+}
+#last {
+	left: 18px
+}
+#next {
+	right: 18px
+}
+
+#last:hover, #last:active , #next:hover, #next:active {
+    background-color: #9C27B0;
+    color: white;
+}
+
 table {
 	background-color: #8E79AD;
 	width: 70%;
