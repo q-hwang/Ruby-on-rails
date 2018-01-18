@@ -78,14 +78,12 @@ tr:hover {
 
 .card {
     position: relative;
-	float: left;
 	padding: 5px;
-	width: 25%;
-	
-}
-
-.card_0 {
-	clear: left;
+	width: 100%;
+	@media screen and (min-width: 425px) {
+	    float: left;
+		width: 25%;
+	}
 }
 
 .card_content {
@@ -103,4 +101,10 @@ tr:hover {
 
 .card img {
 	width: 100%
+}
+
+.card_0 {
+	@media screen and (min-width: 425px) {
+		clear: left;
+	}
 }
