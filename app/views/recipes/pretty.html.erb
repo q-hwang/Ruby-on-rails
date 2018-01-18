@@ -1,0 +1,54 @@
+<h1>Recipes: search result for " <%= @to_search %> "</h1>
+<% if @result['recipes'] == [] && @page == "1"%>
+	<summary>
+		Emmm....Sorry, we have found no recipes about <%= @to_search %>... 
+		Try other keywords?
+	</summary>
+<% else %>
+	<summary>
+		Wow! We have found lots of delicious recipes! 
+		Showing the top <%= @result['count'] %> results in page <%= @page %>.
+	</summary>
+<div class = search_form>
+  Try another one?	
+  <%= form_tag(recipes_pretty_path, method: "get") do %>
+  <%= label_tag(:search, "Search for:") %>
+  <%= text_field_tag(:search) %>
+  <%= submit_tag("Search") %>
+ <% end %>
+</div>
+
+<p>Powered By Food2Fork.com</p>
+	<div class= container>
+		<div class = row>
+			<% n = 0%>
+			<% @result['recipes'].each do |recipe|%>
+			<div class = "card card_<%= n%4 %>">
+				<div class = card_content>
+					<div class = pretty_img>
+						<%= link_to image_tag(recipe['image_url']), recipe['source_url']  %>
+					</div>
+					<div class = title>
+						<%= link_to sanitize(recipe['title']), recipe['source_url'] %>
+					</div>
+					<div class = social_rank>
+						<%= recipe['social_rank'] %>
+					</div>
+			    </div>
+			</div>
+			<% n += 1%>
+			<% end %>
+	    </div>
+	</div>
+	<%if @result['recipes'] == []%>
+	<div>
+	   There are no more results! Go back to former pages or try new keywords!
+	</div>
+	<% end %>
+<% end %>
+<button id = last>
+	<%= link_to "last page", recipes_pretty_path(search: @to_search, page: @page.to_i - 1) %>
+</button>
+<button id = next>
+	<%= link_to "next page", recipes_pretty_path(search: @to_search, page: @page.to_i + 1) %>
+</button>
