@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   get 'recipes/index'
 
+  get 'recipes/pretty'
   root 'recipes#index'
 
   # The priority is based upon order of creation: first created -> highest priority.

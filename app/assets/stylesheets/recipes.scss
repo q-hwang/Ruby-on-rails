@@ -1,17 +1,26 @@
 // Place all the styles related to the recipes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+* {
+	font-family: fantasy;
+	box-sizing: border-box;
+	margin :0;
+}
+
 body {
-	background-color: #8E79AD
+	background-color: #4A148C;
+	color: #f7efef; 
 }
 
 #last, #next {
+    background-color: #f7efef;
 	position: fixed;
 	top: 40%;
 	height:100px;
 	border-radius: 12px;
     -webkit-transition-duration: 0.4s; /* Safari */
     transition-duration: 0.4s;
+    color: #4A148C
 }
 #last {
 	left: 18px
@@ -22,14 +31,13 @@ body {
 
 #last:hover, #last:active , #next:hover, #next:active {
     background-color: #9C27B0;
-    color: white;
+    color: #f7efef;
 }
 
 table {
 	background-color: #8E79AD;
 	width: 70%;
 	margin: 0 15%;
-	font-family: fantasy;
 	font-size: 2em
 }
 tr {
@@ -53,3 +61,46 @@ tr:hover {
 	transform: scale(2)
 }
 
+.container {
+    position: absolute;
+	width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    display: block;
+}
+.row {
+	margin-right: -15px;
+  	margin-left: -15px;
+  	position: absolute;
+    width: 100%;
+    padding: 0 15%;
+}
+
+.card {
+    position: relative;
+	float: left;
+	padding: 5px;
+	width: 25%;
+	
+}
+
+.card_0 {
+	clear: left;
+}
+
+.card_content {
+	border: 2px solid #9C27B0;
+	padding: 5px;
+	border-radius: 15px;
+	background-color: #E1BEE7;
+	transition: all .2s ease;
+}
+
+.card_content:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 0 #888;
+}
+
+.card img {
+	width: 100%
+}
