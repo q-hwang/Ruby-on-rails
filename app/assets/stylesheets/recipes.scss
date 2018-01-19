@@ -12,15 +12,32 @@ body {
 	color: #f7efef; 
 }
 
-#last, #next {
-    background-color: #f7efef;
+summary {
+    width: 100%;
+	display: block;
 	position: fixed;
-	top: 40%;
-	height:100px;
+	top: 0;
+	background-color: #311B92;
+
+}
+
+button, form > input {
+	background-color: #f7efef;
 	border-radius: 12px;
     -webkit-transition-duration: 0.4s; /* Safari */
     transition-duration: 0.4s;
     color: #4A148C
+}
+
+button:hover, form > input:active{
+	background-color: #9C27B0;
+    color: #f7efef;
+}
+
+#last, #next ,#pretty{
+	position: fixed;
+	top: 40%;
+	height:100px;
 }
 #last {
 	left: 18px
@@ -29,9 +46,14 @@ body {
 	right: 18px
 }
 
-#last:hover, #last:active , #next:hover, #next:active {
-    background-color: #9C27B0;
-    color: #f7efef;
+#pretty {
+	top: 18px;
+	right: 18px
+}
+
+table, .content {
+	position: relative;
+    top: 150px;
 }
 
 table {
@@ -68,7 +90,7 @@ tr:hover {
     padding-left: 15px;
     display: block;
 }
-.row {
+.content {
 	margin-right: -15px;
   	margin-left: -15px;
   	position: absolute;
