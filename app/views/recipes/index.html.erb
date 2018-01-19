@@ -1,15 +1,15 @@
 
 
 
-<a href = <%=recipes_pretty_path(search: @to_search, page: @page.to_i - 1) %>>
+<a href = <%=recipes_index_path(search: @to_search, page: @page.to_i - 1) %>>
   <button id = last>last page</button>
 </a>
-<a href = <%=recipes_pretty_path(search: @to_search, page: @page.to_i + 1) %>>
+<a href = <%=recipes_index_path(search: @to_search, page: @page.to_i + 1) %>>
   <button id = next >next page</button>
 </a>
 
 <%if @result['recipes'] == []%>
-	<div class = content> 
+	<div class = content>
 		There are no more results! Go back to former pages or try new keywords!
 	</div>
 <% else %>
@@ -45,10 +45,10 @@
 <summary>
 	<h1>Recipes: search result for " <%= @to_search %> "</h1>
 	<% if @result['recipes'] == [] && @page == "1"%>
-	Emmm....Sorry, we have found no recipes about <%= @to_search %>... 
+	Emmm....Sorry, we have found no recipes about <%= @to_search %>...
 	Try other keywords?
 	<% else %>
-	Wow! We have found lots of delicious recipes! 
+	Wow! We have found lots of delicious recipes!
 	Showing the top <%= @result['count'] %> results in page <%= @page %>.
     <% end %>
 
@@ -57,7 +57,7 @@
     </a>
 
     <div class = search_form>
-	Try another one?	
+	Try another one?
 	<%= form_tag(recipes_index_path, method: "get") do %>
 	  <%= label_tag(:search, "Search for:") %>
 	  <%= text_field_tag(:search) %>
