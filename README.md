@@ -17,16 +17,24 @@ To run the app:
 
 * System dependencies: 
 
+On the top of repo intall gems for tests and run bundle to resolve app dependencies
+
 ``` bash
+$ gem install rspec
+$ gem install rspec-its
+$ gem install capybara
 $ bundle install
 ```
 
 * Environment variables: 
 
 FOOD2FORK_KEY = <Key to https://food2fork.com/about/api>
+
 FOOD2FORK_SERVER_AND_PORT = <the server and port> ('www.food2fork.com:80' by default)
 
 ## Testing
+
+On the top of repo run
 
 ``` bash
 $rspec
